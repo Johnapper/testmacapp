@@ -1,0 +1,13 @@
+<button id='btn' style="background-color: #be3939;">test</button>
+<input id='colordiv' type="color" ondblclick="dbclick();" />
+<script>
+    function dbclick() {
+        alert("double click");
+    }
+
+    function rgbtohex(rgb) {
+        return '#' + rgb.slice(4, -1).split(',').map(x => (+x).toString(16).padStart(2, 0)).join('')
+    }
+    alert(rgbtohex(document.getElementById('btn').style.backgroundColor));
+    document.getElementById('colordiv').value = rgbtohex(document.getElementById('btn').style.backgroundColor);
+</script>
